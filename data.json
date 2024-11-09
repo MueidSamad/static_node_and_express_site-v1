@@ -1,0 +1,31 @@
+{
+    "projects": [
+      {
+        "id": 0,
+        "project_name": "Portfolio Website",
+        "description": "A personal portfolio website to showcase projects and skills.",
+        "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Pug"],
+        "live_link": "https://yourusername.github.io/portfolio-website",
+        "github_link": "https://github.com/yourusername/portfolio-website",
+        "image_urls": [
+          "images/project1-main.jpg",
+          "images/project1-additional1.jpg",
+          "images/project1-additional2.jpg"
+        ]
+      },
+      {
+        "id": 1,
+        "project_name": "Weather App",
+        "description": "A web application that displays weather information based on user location.",
+        "technologies": ["JavaScript", "React", "API", "CSS"],
+        "live_link": "https://yourusername.github.io/weather-app",
+        "github_link": "https://github.com/yourusername/weather-app",
+        "image_urls": [
+          "images/project2-main.jpg",
+          "images/project2-additional1.jpg",
+          "images/project2-additional2.jpg"
+        ]
+      }
+    ]
+  }
+  
