@@ -1,64 +1,67 @@
 const express = require('express');
-const path = require('path');
 const data = require('./data.json');
-
 const app = express();
 
-// Set up view engine
+//view engine & static file link
 app.set('view engine', 'pug');
+app.use('/static', express.static('public'));
 
-// Serve static files
-app.use('/static', express.static(path.join(__dirname, 'public')));
+//--------------
+//    Routes
+//--------------
 
-// Routes
+//route for the home route of the express app
 app.get('/', (req, res) => {
-    res.render('index', { projects: data.projects });
+    const dataP = data.projects;
+    res.render('index', { dataP });
 });
 
+//route for the about section of the portfolio Express app
 app.get('/about', (req, res) => {
-    res.render('about');
+    const dataP = data.projects;
+    res.render('about', { dataP });
 });
 
-app.get('/project/:id', (req, res, next) => {
-    const projectId = req.params.id;
-    const project = data.projects.find(proj => proj.id === parseInt(projectId));
+//route for projects with the ability to insert a param in the url and access a specific project
+app.get('/projects/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const dataP = data.projects[id];
 
-    if (project) {
-        res.render('project', { project });
+    // console.log(dataP)
+    res.render('project', { dataP });
+});
+
+
+
+//-------------------------
+//     Error Handlers
+//-------------------------
+// 404 Handler to catch undefined or non-existent routes and requests
+
+app.use((req, res, next) => {
+    // console.log('404 error handler has been called')
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+//Global Handler
+
+app.use((err, req, res, next) => {
+    // if (err) console.log('Global Handler has been called')
+
+    if (err.status === 404) {
+        res.render('not-found.pug', { err });
+        console.log('Oops, a 404 error has occurred!')
     } else {
-        const err = new Error('Project not found');
-        err.status = 404;
-        next(err);
+        console.log('Oops, a server error has occurred!')
+        err.message = err.message || 'There was an error processing your request!';
+        err.status = err.status || 500;
+        res.render('page-not-found.pug', { err });
     }
 });
 
-// Intentional test error for 500 status
-app.get('/testerror', (req, res, next) => {
-    const err = new Error('Intentional server error.');
-    err.status = 500;
-    next(err);
-});
 
-// 404 Error Handler
-app.use((req, res, next) => {
-    const err = new Error('The page you are looking for does not exist.');
-    err.status = 404;
-    console.error(`404 Error: ${err.message}`);
-    next(err);
-});
-
-// Global Error Handler
-app.use((err, req, res, next) => {
-    err.status = err.status || 500; // Default to 500 if no status
-    err.message = err.message || 'Oops! Something went wrong on the server.';
-
-    console.error(`Error ${err.status}: ${err.message}`);
-
-    res.status(err.status);
-    res.render('error', { error: err });
-});
-
-// Start server
 app.listen(3000, () => {
-    console.log('The app is listening on port 3000');
+    console.log('Server listing on port 3000\n');
 });
