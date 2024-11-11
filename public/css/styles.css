@@ -1,7 +1,7 @@
-
 /*
   Main styles
 */
+
 * {
   box-sizing: border-box;
 }
@@ -31,25 +31,30 @@ article {
   background: #fefefe;
 }
 
-h1,h2,h3,h4,h5,p{
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   font-family: 'Merriweather', serif;
 }
 
-h5{
+h5 {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   letter-spacing: 2.5px;
   -webkit-text-transform: uppercase;
   text-transform: uppercase;
 }
 
-h6{
+h6 {
   letter-spacing: 2.5px;
   -webkit-text-transform: uppercase;
   text-transform: uppercase;
   font-weight: 600;
 }
 
-p{
+p {
   font-size: 15px;
   color: #666;
 }
@@ -103,8 +108,9 @@ a {
 
 
 /*
-  Sidebar and mobile header
+Sidebar and mobile header
 */
+
 nav {
   width: 100%;
   padding: 20px;
@@ -119,7 +125,7 @@ nav a {
   font-size: 13px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #555; 
+  color: #555;
 }
 
 nav a span {
@@ -220,8 +226,9 @@ nav a span {
 
 
 /*
-  Home page styles
+Home page styles
 */
+
 .portfolio-intro {
   max-width: 1200px;
   padding: 40px 50px 30px;
@@ -247,7 +254,8 @@ nav a span {
   font-size: 13px;
   letter-spacing: 2.25px;
   text-transform: uppercase;
-  color: #222;;
+  color: #222;
+  ;
   margin: 0 auto 8px;
 }
 
@@ -264,8 +272,9 @@ nav a span {
 
 
 /* 
-  About and project pages styles 
+About and project pages styles 
 */
+
 .about-intro-box p,
 .project-info-box p {
   font-size: 125%;
@@ -302,63 +311,83 @@ nav a span {
 
 
 /* 
-  Tablet layout styles 
+Tablet layout styles 
 */
+
 @media screen and (min-width: 768px) {
   .sidebar h5 {
-    font-size: 1.25rem;
+      font-size: 1.25rem;
   }
-
   .portfolio-intro h1 {
-    font-size: 3rem;
+      font-size: 3rem;
   }
-
   .box {
-    border-bottom: none;
+      border-bottom: none;
   }
-
   .two-col .box:nth-of-type(1) {
-    width: 70%;
-    padding-right: 15px;
+      width: 70%;
+      padding-right: 15px;
   }
   .two-col .box:nth-of-type(2) {
-    width: 30%;
-    padding-top: 50px;
-    padding-left: 15px;
+      width: 30%;
+      padding-top: 50px;
+      padding-left: 15px;
   }
-
   .cell {
-    margin: 0 0 15px;
+      margin: 0 0 15px;
   }
-
   .cell h5 {
-    font-size: 1.25rem;
+      font-size: 1.25rem;
   }
-
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 
 /* 
-  Desktop layout styles 
+Desktop layout styles 
 */
+
 @media screen and (min-width: 1024px) {
   .sidebar {
-    left: 0;
+      left: 0;
   }
-
   .header {
-    display: none;
+      display: none;
   }
-
   .wrapper {
-    margin-left: 300px;
-    width: calc(100% - 300px);
+      margin-left: 300px;
+      width: calc(100% - 300px);
   }
-
   .inner-wrapper {
-    max-width: 1200px;
+      max-width: 1200px;
   }
+}
+
+.icon {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%
+}
+
+.btn-linkedIn {
+  background-color: rgb(65, 80, 216)
+}
+
+.btn-twitter {
+  background-color: rgb(38, 144, 231);
+}
+
+.btn-github {
+  background-color: black;
+}
+
+.btn-live {
+  background-color: rgb(127, 187, 135);
+}
+
+.btn-repo {
+  background-color: black;
 }
