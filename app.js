@@ -32,7 +32,7 @@ app.get('/projects/:id', (req, res) => {
 });
 
 
-
+app.get("/favicon.ico", (req, res) => res.status(204).end());
 //-------------------------
 //     Error Handlers
 //-------------------------
