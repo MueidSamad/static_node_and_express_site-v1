@@ -19,7 +19,7 @@
           "live_link": "https://MueidSamad.github.io/data-pagination-and-filtering-v1/",
           "github_Link": "https://github.com/MueidSamad/data-pagination-and-filtering-v1",
           "image_urls": {
-              "display": ["static/images/data-pagination-filtering/data-pagination-display.png", "static/images/data-pagination-filtering/data-pag1.png", "static/images/data-pagination-filtering/data-pag2.png"],
+              "display": ["static/images/data-pagination-filtering/data-pag1.png", "static/images/data-pagination-filtering/data-pag2.png","static/images/data-pagination-filtering/data-pagination-thumbnail.png"],
               "thumbnail": "static/images/data-pagination-filtering/data-pagination-thumbnail.png"
           }
       },
@@ -56,7 +56,7 @@
           "github_Link": "https://github.com/MueidSamad/public_api_request-v1",
           "image_urls": {
               "display": ["static/images/public-api-request/api-display.png", "static/images/public-api-request/api1.png", "static/images/public-api-request/api2.png"],
-              "thumbnail": "static/images/public-api-request/api-thumbnail.png"
+              "thumbnail": "static/images/public-api-request/api-display.png"
           }
       }
   ]
