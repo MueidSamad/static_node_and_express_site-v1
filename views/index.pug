@@ -1,20 +1,14 @@
 extends layout.pug
 
 block content
-
   article.portfolio-intro
-
-    h1 Let's make the web great together! 
-
-    p A full stack JavaScript web development portfolio that shows off my work up until this point in my career. The web portfolio that you are currently on is also a project i've worked on to show case all of my previous projects in a cite that utilizes node.js and express.
-
+    h1 Let's make the web great together!
+    p A full stack JavaScript web development portfolio that shows off my work up until this point in my career. The web portfolio that you are currently on is also a project I've worked on to showcase all of my previous projects in a site that utilizes Node.js and Express.
 
   article.portfolio-project-thumbs
     .projects-box.box.grid
-
-  each i in dataP
-    .cell
-      a(href=`/projects/${i.id}`)
-        h5= `${i.project_name}`
-        img.thumbnail(src=`${i.image_urls.thumbnail}` alt=`${i.project_name}`)
-        
+      each i in dataP
+        .cell
+          a(href=`/projects/${i.id}`)
+            img.thumbnail(src=`${i.image_urls.thumbnail}`, alt=`Thumbnail of ${i.project_name}`)
+            h5= i.project_name
